@@ -31,4 +31,4 @@ torch
 torchvision
 streamlit
 jieba
-
+sklearn
