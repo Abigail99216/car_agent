@@ -30,4 +30,5 @@ pdfplumber
 torch
 torchvision
 streamlit
+jieba
 
