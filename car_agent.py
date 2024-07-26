@@ -56,12 +56,11 @@ for query_idx in tqdm(range(len(questions))):
 with st.sidebar:
     st.title('金融专家gpt')
     st.write('支持的大模型包括ChatGLM3和4')
-    # 初始化的对话
-    if "messages" not in st.session_state.keys():
+        
+if "messages" not in st.session_state.keys():
     st.session_state.messages = [{"role": "assistant", "content": "你好我是ChatGLM，有什么可以帮助你的？"}]
-    
 for message in st.session_state.messages:
-   with st.chat_message(message["role"]):
+    with st.chat_message(message["role"]):
         st.write(message["content"])
 
 def clear_chat_history():
@@ -73,8 +72,6 @@ st.sidebar.button('清空聊天记录', on_click=clear_chat_history)
 def main():
     st.title('金融专家助手')
     # 用于跟踪对话历史
-    if 'messages' not in st.session_state:
-        st.session_state.messages = []
     messages = st.container(height=300)
 
 if __name__ == "__main__":
