@@ -7,6 +7,8 @@ import sklearn
 import streamlit as st
 import requests
 from transformers import AutoTokenizer
+from transformers import AutoModelForSequenceClassification
+from tqdm import tqdm
 
 #实际key,过期时间
 def generate_token(apikey: str, exp_seconds: int):
