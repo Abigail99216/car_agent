@@ -9,7 +9,7 @@ import requests
 from transformers import AutoTokenizer
 from transformers import AutoModelForSequenceClassification
 from tqdm import tqdm
-from gensim.summarization.bm25 import BM25Okapi
+from rank_bm25 import BM25Okapi
 
 #实际key,过期时间
 def generate_token(apikey: str, exp_seconds: int):
