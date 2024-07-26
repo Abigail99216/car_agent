@@ -28,3 +28,4 @@ pysqlite3-binary
 httpx==0.25.0
 pdfplumber
 pytorch
+streamlit
