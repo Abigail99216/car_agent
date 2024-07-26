@@ -27,6 +27,7 @@ erniebot==0.5.5
 pysqlite3-binary
 httpx==0.25.0
 pdfplumber
-torch==2.0.1+cu118 
+torch
+torchvision
 streamlit
 
