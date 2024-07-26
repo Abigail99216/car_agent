@@ -32,4 +32,4 @@ torchvision
 streamlit
 jieba
 scikit-learn
-gensim
+rank-bm25
