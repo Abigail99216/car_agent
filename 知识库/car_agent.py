@@ -3,6 +3,7 @@ import time
 from langchain_community.chat_models import ChatZhipuAI
 from langchain_core.output_parsers import StrOutputParser
 from langchain.prompts import PromptTemplate
+import os
 from langchain.chains import RetrievalQA
 import sys
 sys.path.append("../知识库") # 将父目录放入系统路径中
