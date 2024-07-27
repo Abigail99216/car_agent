@@ -64,7 +64,7 @@ def ask_glm(content):
 
 def get_vectordb():
     #定义embeddings
-    embedding = ZhipuAIEmbeddings
+    embedding = ZhipuAIEmbeddings()
     persist_directory = '../知识库/data_base/vector_db/chroma'
     vectordb = Chroma(
         persist_directory=persist_directory,  # 允许我们将persist_directory目录保存到磁盘上
