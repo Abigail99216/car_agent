@@ -1,9 +1,3 @@
-# 将ZhipuAIEmbeddings实例化移到全局范围
-embedding = ZhipuAIEmbeddings()
-
-# 将ChatZhipuAI实例化移到全局范围
-llm = ChatZhipuAI(model="glm-4", temperature=0, zhipuai_api_key="c9bc35e8e7c1c076a8aaba862efb19af.DhiaibnU9Mys34de")
-
 __import__('pysqlite3') 
 import time
 from langchain_community.chat_models import ChatZhipuAI
@@ -35,6 +29,12 @@ import jwt
 from dotenv import load_dotenv, find_dotenv
 _ = load_dotenv(find_dotenv())    # read local .env file
 ZHIPUAI_API_KEY = os.environ['ZHIPUAI_API_KEY']
+
+# 将ZhipuAIEmbeddings实例化移到全局范围
+embedding = ZhipuAIEmbeddings()
+
+# 将ChatZhipuAI实例化移到全局范围
+llm = ChatZhipuAI(model="glm-4", temperature=0, zhipuai_api_key="c9bc35e8e7c1c076a8aaba862efb19af.DhiaibnU9Mys34de")
 
 #实际key,过期时间
 def generate_token(apikey: str, exp_seconds: int):
