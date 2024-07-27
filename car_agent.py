@@ -114,7 +114,8 @@ with st.sidebar:
     model = st.selectbox("选择模型", ["glm-3-turbo", "glm-4"])
     max_tokens = st.slider("max_tokens", 0, 2000, value=512)
     temperature = st.slider("temperature", 0.0, 2.0, value=0.8)
-
+    
+messages = st.container(height=300)
 if "messages" not in st.session_state.keys():
     st.session_state.messages = [{"role": "assistant", "content": "你好我是ChatGLM，我可以为您提供汽车方面的信息"}]
 
