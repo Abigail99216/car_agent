@@ -25,6 +25,9 @@ from transformers import AutoModelForSequenceClassification
 from tqdm import tqdm
 from rank_bm25 import BM25Okapi
 import jwt
+from dotenv import load_dotenv, find_dotenv
+_ = load_dotenv(find_dotenv())    # read local .env file
+ZHIPUAI_API_KEY = os.environ['ZHIPUAI_API_KEY']
 
 #实际key,过期时间
 def generate_token(apikey: str, exp_seconds: int):
