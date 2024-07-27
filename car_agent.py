@@ -54,7 +54,7 @@ questions = json.load(open("questions.json"))
 
 pdf = pdfplumber.open("初赛训练数据集.pdf")
 pdf_content = []
-for page_idx in range(min(30, len(pdf.pages))):
+for page_idx in range(min(10, len(pdf.pages))):
     pdf_content.append({
         'page': 'page_' + str(page_idx + 1),
         'content': pdf.pages[page_idx].extract_text()
