@@ -64,8 +64,9 @@ def get_vectordb():
         embedding_function=embedding 
     ) 
     return vectordb 
+
 #不带历史记录 
-def get_chat_qa_chain(question:str): 
+def get_chat_qa_chain(question): 
     vectordb = get_vectordb() 
     llm = ChatZhipuAI(model = "glm-4", temperature=0, zhipuai_api_key="c9bc35e8e7c1c076a8aaba862efb19af.DhiaibnU9Mys34de") 
     memory = ConversationBufferMemory( 
@@ -81,7 +82,7 @@ def get_chat_qa_chain(question:str):
     result = qa({"question": question}) 
     return result['answer'] 
 #带有历史记录 
-def get_qa_chain(question:str): 
+def get_qa_chain(question): 
     vectordb = get_vectordb() 
     llm = ChatZhipuAI(model = "glm-4", temperature=0, zhipuai_api_key="c9bc35e8e7c1c076a8aaba862efb19af.DhiaibnU9Mys34de") 
     template = """使用以下上下文来回答最后的问题。如果你不知道答案，就说你不知道，不要试图编造答 
