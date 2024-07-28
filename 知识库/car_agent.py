@@ -1,3 +1,4 @@
+__import__('pysqlite3')
 import time 
 from langchain_community.chat_models import ChatZhipuAI 
 from langchain_core.output_parsers import StrOutputParser 
@@ -5,6 +6,7 @@ from langchain.prompts import PromptTemplate
 from langchain.chains import RetrievalQA 
 import sys 
 sys.path.append("../知识库") # 将父目录放入系统路径中 
+sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
 from zhipuai_embedding import ZhipuAIEmbeddings 
 from langchain.vectorstores.chroma import Chroma 
 from langchain.memory import ConversationBufferMemory 
